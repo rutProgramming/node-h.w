@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const { config } = require('../config/secret');
 
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/ATIDA2025');
+  await mongoose.connect(config.db_connection);
 }
